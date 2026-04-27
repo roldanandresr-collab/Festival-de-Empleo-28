@@ -2854,14 +2854,14 @@ footer p + p {
 /* HERO CARD destacada (Top 65 = 18) */
 .dc-hero {
   background: linear-gradient(135deg, #FFE978 0%, #FFD700 50%, #FFC700 100%);
-  border-radius: 16px;
-  padding: 28px 36px;
-  margin-bottom: 28px;
+  border-radius: 12px;
+  padding: 16px 28px;
+  margin-bottom: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 26px;
-  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.25);
+  gap: 18px;
+  box-shadow: 0 5px 16px rgba(255, 215, 0, 0.22);
   position: relative;
   overflow: hidden;
 }
@@ -2869,30 +2869,31 @@ footer p + p {
 .dc-hero::before {
   content: '';
   position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 180px;
-  height: 180px;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .dc-hero::after {
   content: '';
   position: absolute;
-  bottom: -50px;
-  left: -50px;
-  width: 140px;
-  height: 140px;
+  bottom: -36px;
+  left: -36px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background: rgba(0, 71, 160, 0.05);
 }
 
 .dc-hero-icon {
-  font-size: 64px;
+  font-size: 36px;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(2px 4px 6px rgba(0,71,160,0.2));
+  filter: drop-shadow(1px 2px 4px rgba(0,71,160,0.18));
+  line-height: 1;
 }
 
 .dc-hero-content {
@@ -2900,29 +2901,43 @@ footer p + p {
   z-index: 1;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
 }
 
 .dc-hero-num {
   font-family: 'Archivo', sans-serif;
   font-weight: 900;
-  font-size: 88px;
+  font-size: 60px;
   line-height: 1;
   color: #5C4500;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
 }
 
 .dc-hero-text {
   font-family: 'Archivo', sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 15px;
   color: #5C4500;
   line-height: 1.25;
-  max-width: 360px;
+  max-width: 380px;
 }
 
 .dc-hero-text strong {
   font-weight: 900;
+}
+
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .dc-grid { grid-template-columns: repeat(2, 1fr); }
+  .dc-hero { flex-direction: column; padding: 16px; gap: 8px; }
+  .dc-hero-content { flex-direction: column; gap: 6px; text-align: center; }
+  .dc-hero-num { font-size: 48px; }
+  .dc-hero-text { text-align: center; font-size: 13.5px; }
+}
+@media (max-width: 600px) {
+  .dc-grid { grid-template-columns: 1fr; }
+  .dc-hero-num { font-size: 40px; }
 }
 
 /* Grid de cards estándar */
@@ -3010,18 +3025,6 @@ footer p + p {
   margin-top: 2px;
 }
 
-/* Responsive */
-@media (max-width: 1100px) {
-  .dc-grid { grid-template-columns: repeat(2, 1fr); }
-  .dc-hero { flex-direction: column; padding: 22px; }
-  .dc-hero-content { flex-direction: column; gap: 8px; }
-  .dc-hero-num { font-size: 64px; }
-  .dc-hero-text { text-align: center; font-size: 15px; }
-}
-@media (max-width: 600px) {
-  .dc-grid { grid-template-columns: 1fr; }
-  .dc-hero-num { font-size: 52px; }
-}
 
 /* ===========================================
    DATOS CURIOSOS — Bloque 2: Empresas y Vacantes
@@ -3566,6 +3569,20 @@ footer p + p {
 .dc-cand-hero-meta strong {
   color: #6B4FA0;
   font-weight: 700;
+}
+
+/* Variante AZUL del hero (para sub-bloque Empresas y vacantes) */
+.dc-cand-hero.azul {
+  background: linear-gradient(135deg, var(--azul-suave) 0%, #D4E2F4 100%);
+  border-left-color: var(--azul);
+}
+
+.dc-cand-hero.azul .dc-cand-hero-title {
+  color: var(--azul-oscuro);
+}
+
+.dc-cand-hero.azul .dc-cand-hero-meta strong {
+  color: var(--azul);
 }
 
 /* 6 KPI cards header */
@@ -4566,6 +4583,7 @@ footer p + p {
       </div>
     </div>
 
+
     <!-- 8 cards de datos -->
     <div class="dc-grid">
 
@@ -4648,6 +4666,15 @@ footer p + p {
          BLOQUE 2 — EMPRESAS Y VACANTES
          ================================================= -->
     <h3 class="dc-block-title">Empresas y vacantes <span class="lbl-meta">· caracterización de la oferta laboral</span></h3>
+
+    <!-- Hero de Empresas y vacantes -->
+    <div class="dc-cand-hero azul">
+      <div class="dc-cand-hero-icon">🏢</div>
+      <div class="dc-cand-hero-content">
+        <div class="dc-cand-hero-title">Empresas y vacantes</div>
+        <div class="dc-cand-hero-meta">Caracterización de las <strong>50 empresas confirmadas</strong> y los <strong>6.087 puestos</strong> de trabajo ofertados en el Festival</div>
+      </div>
+    </div>
 
     <!-- Fila 1: Top 5 empresas + Tipo de contrato -->
     <div class="dc-row-2">
